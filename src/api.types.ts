@@ -6,6 +6,7 @@ export type Urls = {
 export type Photo = {
   alt_description: string;
   urls: Urls;
+  id: string;
 };
 
 export type Response = {

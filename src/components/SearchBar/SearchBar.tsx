@@ -2,8 +2,15 @@ import s from "./SearchBar.module.css";
 import { Formik, Form, Field } from "formik";
 import toast, { Toaster } from "react-hot-toast";
 
-const SearchBar = ({ handleChangeQuery }) => {
-  const handleSubmit = (values) => {
+type SearchBarProps = {
+  handleChangeQuery: (newQuery: string) => void;
+};
+type FormValues = {
+  query: string;
+};
+
+const SearchBar: React.FC<SearchBarProps> = ({ handleChangeQuery }) => {
+  const handleSubmit = (values: FormValues) => {
     if (values.query === "") {
       toast.error("Please, enter the query!");
     }

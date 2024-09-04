@@ -1,8 +1,17 @@
-const ImageCard = ({ urls, alt_description, handleOpenModal }) => {
+import React from "react";
+import { ImageCardProps } from "./ImageCard.types";
+
+const ImageCard: React.FC<ImageCardProps> = ({
+  urls,
+  alt_description,
+  handleOpenModal,
+}) => {
   return (
     <div>
       <img
-        onClick={() => handleOpenModal({ url: urls.regular, alt_description })}
+        onClick={() =>
+          handleOpenModal({ url: urls.regular, alt: alt_description })
+        }
         src={urls.small}
         alt={alt_description}
       />
